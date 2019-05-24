@@ -1,4 +1,4 @@
-import Taro from '@tarojs/taro'
+import Taro from './node_modules/@tarojs/taro'
 import getBaseUrl from './config'
 import interceptors from './interceptors'
 

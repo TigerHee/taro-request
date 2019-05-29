@@ -1,5 +1,5 @@
 # taro-request
-> 对Taro.request进行封装
+> 封装Taro.request（拦截器，url配置，Authorization等），如果觉得有用的话，请给一个star。
 
 ### **仅适用于taro项目**
 
@@ -13,7 +13,7 @@ servers
 ├── servers.js               //建议所有接口请求整理在一起再按需引用
 └── utils.js
 ```
-###### 组件内使用eg:
+### 组件内使用eg:
 ```
 import { getResultData_servers } from '@src/servers/servers'
 

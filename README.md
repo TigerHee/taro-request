@@ -1,7 +1,7 @@
 # taro-request
 > 封装Taro.request（拦截器，url配置，Authorization等），如果觉得有用的话，请给一个star。
 
-### **仅适用于taro项目**
+> ✅ 仅适用于taro项目
 
 ## 目录结构
 

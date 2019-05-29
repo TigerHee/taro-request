@@ -13,7 +13,7 @@ servers
 ├── servers.js               //建议所有接口请求整理在一起再按需引用
 └── utils.js
 ```
-### 组件内使用eg:
+## 组件内使用eg:
 ```
 import { getResultData_servers } from '@src/servers/servers'
 
@@ -24,4 +24,6 @@ getResultData_servers(params).then(res => {
 })
 
 ```
-* 💯[示例项目](https://github.com/TigerHee/taro-init)
+
+## 示例项目:
+* 💯[taro-init](https://github.com/TigerHee/taro-init)

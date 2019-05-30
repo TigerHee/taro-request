@@ -4,12 +4,12 @@ import interceptors from './interceptors'
 
 interceptors.forEach(i => Taro.addInterceptor(i))
 
-export default {
-  baseOptions(params, method = 'GET') {
-    let { url, data } = params
-    const BASE_URL = getBaseUrl(url)
-    let contentType = 'application/json'
-    contentType = params.contentType || contentType
+class httpRequest {
+  baseOptions(params, method = "GET") {
+    let { url, data } = params;
+    const BASE_URL = getBaseUrl(url);
+    let contentType = "application/json";
+    contentType = params.contentType || contentType;
     const option = {
       url: BASE_URL + url,
       data: data,
@@ -19,22 +19,29 @@ export default {
         'Authorization': Taro.getStorageSync('Authorization')
       }
     };
-    return Taro.request(option)
-  },
-  get(url, data = '') {
-    let option = { url, data }
-    return this.baseOptions(option)
-  },
-  post(url, data, contentType) {
-    let params = { url, data, contentType }
-    return this.baseOptions(params, 'POST')
-  },
-  put(url, data = '') {
-    let option = { url, data }
-    return this.baseOptions(option, 'PUT')
-  },
-  delete(url, data = '') {
-    let option = { url, data }
-    return this.baseOptions(option, 'DELETE')
+    return Taro.request(option);
   }
-};
+
+  get(url, data = "") {
+    let option = { url, data };
+    return this.baseOptions(option);
+  }
+
+  post(url, data, contentType) {
+    let params = { url, data, contentType };
+    return this.baseOptions(params, "POST");
+  }
+
+  put(url, data = "") {
+    let option = { url, data };
+    return this.baseOptions(option, "PUT");
+  }
+
+  delete(url, data = "") {
+    let option = { url, data };
+    return this.baseOptions(option, "DELETE");
+  }
+
+}
+
+export default new httpRequest()

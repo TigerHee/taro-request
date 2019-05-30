@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-import API from "./api"
+import HTTP from "./http"
 
 export const getResultData_servers = (postData) => {
-  return API.post('/api/white-screen/search', postData)
+  return HTTP.post('/api/white-screen/search', postData)
 }

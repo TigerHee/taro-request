@@ -1,21 +1,13 @@
-const getBaseUrl = (url) => {
-  let BASE_URL = '';
-  if (process.env.NODE_ENV === 'development') {
-    //开发环境 - 根据请求不同返回不同的BASE_URL
-    if (url.includes('/api/')) {
-      BASE_URL = ''
-    } else if (url.includes('/iatadatabase/')) {
-      BASE_URL = ''
-    }
-  } else {
-    // 生产环境
-    if (url.includes('/api/')) {
-      BASE_URL = ''
-    } else if (url.includes('/iatadatabase/')) {
-      BASE_URL = ''
-    }
-  }
-  return BASE_URL
+export const HTTP_STATUS = {
+  SUCCESS: 200,
+  CREATED: 201,
+  ACCEPTED: 202,
+  CLIENT_ERROR: 400,
+  AUTHENTICATE: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  SERVER_ERROR: 500,
+  BAD_GATEWAY: 502,
+  SERVICE_UNAVAILABLE: 503,
+  GATEWAY_TIMEOUT: 504
 }
-
-export default getBaseUrl;

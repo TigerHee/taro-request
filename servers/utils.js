@@ -8,3 +8,12 @@ export const getCurrentPageUrl = () => {
   let url = currentPage.route
   return url
 };
+
+export const pageToLogin = () => {
+  let path = getCurrentPageUrl()
+  if (!path.includes('login')) {
+    Taro.navigateTo({
+      url: "/pages/login/login"
+    });
+  }
+}

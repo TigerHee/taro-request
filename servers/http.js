@@ -1,5 +1,5 @@
 import Taro from './node_modules/@tarojs/taro'
-import getBaseUrl from './config'
+import getBaseUrl from './baseUrl'
 import interceptors from './interceptors'
 
 interceptors.forEach(i => Taro.addInterceptor(i))

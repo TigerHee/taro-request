@@ -7,11 +7,12 @@
 
 ```
 servers
-├── api.js
-├── config.js
-├── interceptors.js
-├── servers.js               //建议所有接口请求整理在一起再按需引用
-└── utils.js
+├── http.js                  // Taro.request处理
+├── baseUrl.js               // 设置不同环境不同路径请求的url地址
+├── config.js                // http状态配置
+├── interceptors.js          // 拦截器
+├── servers.js               // 建议所有接口请求整理在一起再按需引用
+└── utils.js                 // 页面跳转等函数封装
 ```
 ## 组件内使用eg:
 ```

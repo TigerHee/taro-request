@@ -7,7 +7,7 @@ export const getCurrentPageUrl = () => {
   let currentPage = pages[pages.length - 1]
   let url = currentPage.route
   return url
-};
+}
 
 export const pageToLogin = () => {
   let path = getCurrentPageUrl()

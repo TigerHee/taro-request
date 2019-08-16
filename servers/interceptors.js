@@ -2,11 +2,11 @@ import Taro from "@tarojs/taro"
 import { pageToLogin } from "./utils"
 import { HTTP_STATUS } from './config'
 
-const customInterceptor = (chain) => {
+const customInterceptor = (request) => {
 
-  const requestParams = chain.requestParams
+  const requestParams = request.requestParams
 
-  return chain.proceed(requestParams).then(res => {
+  return request.proceed(requestParams).then(res => {
     // 只要请求成功，不管返回什么状态码，都走这个回调
     if (res.statusCode === HTTP_STATUS.NOT_FOUND) {
       return Promise.reject("请求资源不存在")
@@ -32,6 +32,9 @@ const customInterceptor = (chain) => {
   })
 }
 
+// Taro 提供了两个内置拦截器
+// logInterceptor - 用于打印请求的相关信息
+// timeoutInterceptor - 在请求超时时抛出错误。
 const interceptors = [customInterceptor, Taro.interceptors.logInterceptor]
 
 export default interceptors

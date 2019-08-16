@@ -2,9 +2,10 @@ import Taro from '@tarojs/taro'
 import getBaseUrl from './baseUrl'
 import interceptors from './interceptors'
 
-interceptors.forEach(i => Taro.addInterceptor(i))
+interceptors.forEach(interceptorItem => Taro.addInterceptor(interceptorItem))
 
 class httpRequest {
+  
   baseOptions(params, method = "GET") {
     let { url, data } = params;
     const BASE_URL = getBaseUrl(url);
